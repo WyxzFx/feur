@@ -3,7 +3,7 @@ const inlinereply = require('discord-reply');
 const client = new Discord.Client({ intents: [Discord.Intents.FLAGS.GUILDS, Discord.Intents.FLAGS.GUILD_MESSAGES] });
 const token = 'MTAxODUwMjY2NzA2MTk1NjcxOA.G5GDh-.n1LZK9iudQKNgnDPTFYPdtPSIXUx_xGu_KX8zc';
 
-client.login(token);
+client.login(process.env.TOKEN);
 
 client.on('message', message => {
     if (!message.guild.me.permissionsIn(client.channels.cache.get(message.channel.id)).has("SEND_MESSAGES")) {
